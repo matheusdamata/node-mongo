@@ -15,7 +15,7 @@
 <h3>Users DataBase:</h3>
 {{ #users }}
 <ul>
-    <li>{{ name.firstName }} - {{ age }} anos.</li>
+    <li>{{ name.firstName }} - {{ age }} anos - <a href="/user/{{_id}}/addidade">+1 year</a></li>
 </ul>
 {{ /users }}
 

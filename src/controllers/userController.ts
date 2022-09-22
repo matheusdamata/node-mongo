@@ -35,6 +35,25 @@ export const addUserAction = async (req: Request, res: Response) => {
     res.redirect('/');
 };
 
+export const incrementAgeAction = async (req: Request, res: Response) => {
+    const userId = req.params.id;
+
+    let user = await User.findOne({ _id: userId });
+
+    if(user) {
+        if(user.age < 50) {
+            user.age++;
+            await user.save();
+        } else {
+            console.log("User has reached the age limit!");
+        }
+    } else {
+        console.log("User not found.");
+    }
+
+    res.redirect('/');
+};
+
 export const idadeForm = (req: Request, res: Response) => {
     res.render('pages/idade');
 };
