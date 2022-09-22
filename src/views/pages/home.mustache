@@ -1,0 +1,22 @@
+{{>partials/header}}
+
+<fieldset>
+    <legend>Create New User</legend>
+    <form method="POST" action="/new-user">
+        <input type="text" name="firstName" placeholder="Name user" /><br/><br/>
+        <input type="text" name="lastName" placeholder="Last name user" /><br/><br/>
+        <input type="email" name="email" placeholder="email user" /><br/><br/>
+        <input type="text" name="age" placeholder="Age user" /><br/><br/>
+        <input type="text" name="interests" placeholder="User interest (enter comma separated)" /><br/><br/>
+        <input type="submit" value="Create" /><br/><br/>
+    </form>
+</fieldset>
+
+<h3>Users DataBase:</h3>
+{{ #users }}
+<ul>
+    <li>{{ name.firstName }} - {{ age }} anos.</li>
+</ul>
+{{ /users }}
+
+{{>partials/footer}}
